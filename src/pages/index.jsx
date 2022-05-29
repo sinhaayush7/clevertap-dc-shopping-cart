@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { useLocation } from "react-router-dom"
 import { toast, ToastContainer } from "react-toastify"
 import { Call } from "../components/call"
 import ProductCard from "../components/card"
 import AppBar from "../components/navbar"
 import { PRODUCTS } from "../utils/products"
-import * as DirecatCall from '../libs/directcall-sdk'
 
-export const HomePage = ({ clevertap, name, email }) => {
+export const HomePage = ({ clevertap }) => {
+  const { state: { name, email } } = useLocation()
+  console.log({ name, email })
   const [items, setItems] = useState([])
   const [totalCost, setTotalCost] = useState(0)
   const [product, setProduct] = useState([])
