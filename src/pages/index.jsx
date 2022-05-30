@@ -5,6 +5,7 @@ import { Call } from "../components/call"
 import ProductCard from "../components/card"
 import AppBar from "../components/navbar"
 import { PRODUCTS } from "../utils/products"
+import 'react-toastify/dist/ReactToastify.min.css';
 
 export const HomePage = ({ clevertap }) => {
   const { state: { name, email } } = useLocation()
@@ -63,7 +64,7 @@ export const HomePage = ({ clevertap }) => {
       <AppBar totalItems={items} totalCost={totalCost} product={product} handleCheckout={handleCheckout} />
       <div style={{ paddingLeft: '6%', paddingTop: '5%' }}>
 
-        <div className="flex flex-wrap mb-3 mt-12 mb-12">
+        <div className="flex flex-wrap mt-12 mb-12">
           {
             PRODUCTS.map(products => {
               return (
@@ -75,7 +76,7 @@ export const HomePage = ({ clevertap }) => {
           }
         </div>
         <Call clevertap={clevertap} name={name} email={email} />
-        <ToastContainer position="bottom-right"
+        <ToastContainer position="top-right"
           autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}

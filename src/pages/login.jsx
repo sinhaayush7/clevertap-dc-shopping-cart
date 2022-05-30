@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import '../styles/login.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 const LoginPage = () => {
@@ -14,6 +15,7 @@ const LoginPage = () => {
   const history = useNavigate()
 
   const showToast = (message) => {
+    console.log(message)
     toast(message)
   }
 
