@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { toast, ToastContainer } from "react-toastify"
 import * as DirectCall from '../libs/directcall-sdk'
-
+import 'react-toastify/dist/ReactToastify.min.css';
 
 export const Call = ({ name, email }) => {
 
@@ -25,7 +25,7 @@ export const Call = ({ name, email }) => {
     const cuids = ['ayush.sinha@clevertap.com', 'sumantu@clevertap.com', 'shivam.sharma@celvertap.com', 'darshan.pania@clevertap.com', 'sumantu2@clevertap.com']
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
     console.log("hit on makecall", callee)
-    dcClient.call(callee, 'Introductroy Call').then(res => toast(res)).catch(err => toast(err))
+    dcClient.call('ayush.sinha@clevertap.com', 'Introductroy Call').then(res => toast('call ' + res)).catch(err => toast('call ' + err))
   }
   return (
     <>
