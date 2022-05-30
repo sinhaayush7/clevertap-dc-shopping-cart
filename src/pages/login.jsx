@@ -37,7 +37,7 @@ const LoginPage = () => {
 
     showToast("CleverTap Profile Push Event Recorded!")
 
-    history('/home', { name, email });
+    history('/home', { state: { name, email } });
   }
 
   const onUserLoginPressed = (e) => {
@@ -58,7 +58,7 @@ const LoginPage = () => {
     })
     showToast("CleverTap OnUserLogin Event Recorded!")
 
-    history('/home', { name, email });
+    history('/home', { state: { name, email } });
   }
 
 
@@ -69,7 +69,6 @@ const LoginPage = () => {
           <img src="logo.png" width="100px" height="100px" alt="logo" />
         </div>
         <form>
-
           <h3 className='text-2xl'>Sign In</h3>
           <div className="form-group">
             <label className="block text-gray-700 text-md font-regular mb-2" htmlFor="name">
