@@ -25,7 +25,13 @@ export const Call = ({ name, email }) => {
     const cuids = ['ayush.sinha@clevertap.com', 'sumantu@clevertap.com', 'shivam.sharma@celvertap.com', 'darshan.pania@clevertap.com', 'sumantu2@clevertap.com']
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
     console.log("hit on makecall", callee)
-    dcClient.call('ayush.sinha@clevertap.com', 'Introductroy Call').then(res => toast('call ' + res)).catch(err => toast('call ' + err))
+    dcClient.call('ayush.sinha@clevertap.com', 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
+      if (err && err.message) {
+        toast(err.message)
+      } else {
+        toast('call ' + err)
+      }
+    })
   }
   return (
     <>
