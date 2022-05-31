@@ -15,7 +15,6 @@ const LoginPage = () => {
   const history = useNavigate()
 
   const showToast = (message) => {
-    console.log(message)
     toast(message)
   }
 

@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 export const HomePage = ({ clevertap }) => {
   const { state: { name, email } } = useLocation()
-  console.log({ name, email })
   const [items, setItems] = useState([])
   const [totalCost, setTotalCost] = useState(0)
   const [product, setProduct] = useState([])
@@ -25,7 +24,6 @@ export const HomePage = ({ clevertap }) => {
   // })
 
   const showToast = (message) => {
-    console.log(message)
     toast(message)
   }
 
@@ -33,7 +31,6 @@ export const HomePage = ({ clevertap }) => {
   const handleAddToCart = (id, price, image, name) => {
     if (items.indexOf(id) < 0) {
       setItems([...items, id])
-      console.log(product, "this is product from productcart")
       setProduct([...product, { image, name, price, id, quantity: 1 }])
 
     } else {
@@ -46,7 +43,6 @@ export const HomePage = ({ clevertap }) => {
 
   const handleCheckout = () => {
     if (items.length > 0) {
-      // console.log(product)
       clevertap.event.push("Charged", {
         Items: product
       })

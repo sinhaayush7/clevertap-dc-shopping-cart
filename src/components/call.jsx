@@ -17,15 +17,19 @@ export const Call = ({ name, email }) => {
       clevertap
     }).then((client) => {
       setDcClient(client)
-      console.log(client)
-    }).catch(err => console.log(err))
+    }).catch(err => {
+      if (err && err.message) {
+        toast(err.message)
+      } else {
+        toast(err)
+      }
+    })
   }, [email, name, clevertap])
 
   const makeCall = () => {
     const cuids = ['ayush.sinha@clevertap.com', 'sumantu@clevertap.com', 'shivam.sharma@celvertap.com', 'darshan.pania@clevertap.com', 'sumantu2@clevertap.com']
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
-    console.log("hit on makecall", callee)
-    dcClient.call('ayush.sinha@clevertap.com', 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
+    dcClient.call(callee, 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
       if (err && err.message) {
         toast(err.message)
       } else {
