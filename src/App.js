@@ -21,7 +21,7 @@ function App() {
       "okButtonColor": '#f28046',
       "serviceWorkerPath": "./firebase-messaging-sw.js"
     });
-  }, [])
+  }, [clevertap])
 
   return (
     <div className="App h-screen">

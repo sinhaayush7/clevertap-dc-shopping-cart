@@ -19,7 +19,7 @@ export const Call = ({ name, email }) => {
       setDcClient(client)
       console.log(client)
     }).catch(err => console.log(err))
-  }, [])
+  }, [email, name, clevertap])
 
   const makeCall = () => {
     const cuids = ['ayush.sinha@clevertap.com', 'sumantu@clevertap.com', 'shivam.sharma@celvertap.com', 'darshan.pania@clevertap.com', 'sumantu2@clevertap.com']
