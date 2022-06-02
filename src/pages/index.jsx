@@ -1,19 +1,36 @@
 import { useState } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { toast, ToastContainer } from "react-toastify"
 import { Call } from "../components/call"
 import ProductCard from "../components/card"
 import AppBar from "../components/navbar"
 import { PRODUCTS } from "../utils/products"
 import 'react-toastify/dist/ReactToastify.min.css';
+import { useEffect } from "react"
 
 export const HomePage = ({ clevertap }) => {
-  const { state: { name, email } } = useLocation()
+  let name
+  let email
+  const history = useNavigate()
+  let { state } = useLocation()
+  useEffect(() => {
+    console.log(state)
+    if (!state || !state.name || !state.email) {
+      history('/')
+      return
+    }
+  }, [state])
   const [items, setItems] = useState([])
   const [totalCost, setTotalCost] = useState(0)
   const [product, setProduct] = useState([])
-
-
+  if (state) {
+    name = state.name
+    email = state.email
+    // if (state.name) {
+    // }
+    // if (state.email) {
+    // }
+  }
   const showToast = (message) => {
     toast(message)
   }
@@ -62,7 +79,10 @@ export const HomePage = ({ clevertap }) => {
             })
           }
         </div>
-        <Call clevertap={clevertap} name={name} email={email} />
+        {
+          !email ? null : <Call clevertap={clevertap} name={name} email={email} />
+        }
+
         <ToastContainer position="top-right"
           autoClose={2000}
           hideProgressBar={false}
