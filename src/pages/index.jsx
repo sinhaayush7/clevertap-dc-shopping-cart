@@ -14,7 +14,6 @@ export const HomePage = ({ clevertap }) => {
   const history = useNavigate()
   let { state } = useLocation()
   useEffect(() => {
-    console.log(state)
     if (!state || !state.name || !state.email) {
       history('/')
       return
@@ -26,10 +25,6 @@ export const HomePage = ({ clevertap }) => {
   if (state) {
     name = state.name
     email = state.email
-    // if (state.name) {
-    // }
-    // if (state.email) {
-    // }
   }
   const showToast = (message) => {
     toast(message)
