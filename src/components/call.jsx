@@ -29,13 +29,17 @@ export const Call = ({ name, email }) => {
   const makeCall = () => {
     const cuids = ['ayush.sinha@clevertap.com', 'sumantu@clevertap.com', 'shivam.sharma@celvertap.com', 'darshan.pania@clevertap.com', 'sumantudc@clevertap.com']
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
-    dcClient.call(callee, 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
-      if (err && err.message) {
-        toast(err.message)
-      } else {
-        toast('call ' + err)
-      }
-    })
+    if (dcClient && dcClient.isEnabled()) {
+      dcClient.call(callee, 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
+        if (err && err.message) {
+          toast(err.message)
+        } else {
+          toast('call ' + err)
+        }
+      })
+    } else {
+      toast("Please wait while DirectCall Client is connected")
+    }
   }
   return (
     <>

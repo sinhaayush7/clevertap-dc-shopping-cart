@@ -9,7 +9,6 @@ import reportWebVitals from './reportWebVitals';
 
 let Clevertap = clevertap
 Clevertap.privacy.push({ optOut: false });
-console.log()
 Clevertap.init('W9R-486-4W5Z');
 Clevertap.setLogLevel(3);
 window.clevertap = Clevertap

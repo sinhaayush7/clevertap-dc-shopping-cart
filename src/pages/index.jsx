@@ -14,15 +14,6 @@ export const HomePage = ({ clevertap }) => {
   const [product, setProduct] = useState([])
 
 
-  // useEffect(() => {
-  //   DirecatCall.init({
-  //     accountId: "61a52046f56a14cb19a1e9cc",
-  //     apikey: "9dcced09dae16c5e3606c22346d92361b77efdb360425913850bea4f22d812dd",
-  //     cuid: "ayush123@gmail.com",
-  //     clevertap
-  //   })
-  // })
-
   const showToast = (message) => {
     toast(message)
   }
