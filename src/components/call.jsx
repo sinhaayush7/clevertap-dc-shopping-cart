@@ -27,7 +27,7 @@ export const Call = ({ name, email }) => {
   }, [email, name, clevertap])
 
   const makeCall = () => {
-    const cuids = ['ayush.sinha@clevertap.com', 'sumantu@clevertap.com', 'shivam.sharma@celvertap.com', 'darshan.pania@clevertap.com', 'sumantudc@clevertap.com']
+    const cuids = ['ayush.sinha', 'sumantu', 'shivam.sharma', 'darshan.pania', 'sumantudc']
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
     if (dcClient && dcClient.isEnabled()) {
       dcClient.call(callee, 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
