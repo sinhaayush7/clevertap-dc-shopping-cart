@@ -84,8 +84,8 @@ const LoginPage = () => {
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter email" onChange={e => { setEmail(e.target.value); setShowError(false) }} />
           </div>
 
-          <button onClick={profilePushPressed} className="btn btn-primary px-4 py-2 rounded text-white">Profile Push</button>
-          <button onClick={onUserLoginPressed} className="btn btn-primary px-4 py-2 rounded text-white">On User Login</button>
+          <button onClick={profilePushPressed} className="btn btn-primary px-4 py-2 rounded w-full text-white">Login</button>
+          {/* <button onClick={onUserLoginPressed} className="btn btn-primary px-4 py-2 rounded text-white">On User Login</button> */}
           {
             showError ? <>
               <p className='pt-4 text-red-400 text-sm'>* Name and Email are mandatory fields</p>
