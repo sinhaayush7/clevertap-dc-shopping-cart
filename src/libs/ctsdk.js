@@ -2,10 +2,9 @@
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-      (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.clevertap = factory());
-}(this, (function () {
-  'use strict';
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.clevertap = factory());
+}(this, (function () { 'use strict';
 
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -131,7 +130,7 @@
     if (typeof Proxy === "function") return true;
 
     try {
-      Date.prototype.toString.call(Reflect.construct(Date, [], function () { }));
+      Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
       return true;
     } catch (e) {
       return false;
@@ -214,7 +213,7 @@
 
     return function _createSuperInternal() {
       var Super = _getPrototypeOf(Derived),
-        result;
+          result;
 
       if (hasNativeReflectConstruct) {
         var NewTarget = _getPrototypeOf(this).constructor;
@@ -253,7 +252,7 @@
         if (it) o = it;
         var i = 0;
 
-        var F = function () { };
+        var F = function () {};
 
         return {
           s: F,
@@ -277,8 +276,8 @@
     }
 
     var normalCompletion = true,
-      didErr = false,
-      err;
+        didErr = false,
+        err;
     return {
       s: function () {
         it = o[Symbol.iterator]();
@@ -331,7 +330,7 @@
   var Account = /*#__PURE__*/function () {
     function Account() {
       var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        id = _ref.id;
+          id = _ref.id;
 
       var region = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
       var targetDomain = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : TARGET_DOMAIN;
@@ -611,7 +610,7 @@
         if (data != null) {
           try {
             data = JSON.parse(data);
-          } catch (e) { }
+          } catch (e) {}
         }
 
         return data;
@@ -703,7 +702,7 @@
           }
 
           $ct.globalCache[property] = value;
-        } catch (e) { }
+        } catch (e) {}
       }
     }, {
       key: "readFromLSorCookie",
@@ -1060,9 +1059,9 @@
   var CleverTapAPI = /*#__PURE__*/function () {
     function CleverTapAPI(_ref) {
       var logger = _ref.logger,
-        request = _ref.request,
-        device = _ref.device,
-        session = _ref.session;
+          request = _ref.request,
+          device = _ref.device,
+          session = _ref.session;
 
       _classCallCheck(this, CleverTapAPI);
 
@@ -1357,8 +1356,8 @@
       var _this;
 
       var logger = _ref.logger,
-        request = _ref.request,
-        isPersonalisationActive = _ref.isPersonalisationActive;
+          request = _ref.request,
+          isPersonalisationActive = _ref.isPersonalisationActive;
 
       _classCallCheck(this, EventHandler);
 
@@ -1562,21 +1561,21 @@
   var compress = function compress(uncompressed) {
     if (uncompressed == null) return '';
     var i,
-      value,
-      context_dictionary = {},
-      context_dictionaryToCreate = {},
-      context_c = '',
-      context_wc = '',
-      context_w = '',
-      context_enlargeIn = 2,
-      // Compensate for the first entry which should not count
-      context_dictSize = 3,
-      context_numBits = 2,
-      context_data_string = '',
-      context_data_val = 0,
-      context_data_position = 0,
-      ii,
-      f = String.fromCharCode;
+        value,
+        context_dictionary = {},
+        context_dictionaryToCreate = {},
+        context_c = '',
+        context_wc = '',
+        context_w = '',
+        context_enlargeIn = 2,
+        // Compensate for the first entry which should not count
+    context_dictSize = 3,
+        context_numBits = 2,
+        context_data_string = '',
+        context_data_val = 0,
+        context_data_position = 0,
+        ii,
+        f = String.fromCharCode;
 
     for (ii = 0; ii < uncompressed.length; ii += 1) {
       context_c = uncompressed.charAt(ii);
@@ -1852,7 +1851,7 @@
       if (i % 2 == 0) {
         chr1 = input.charCodeAt(i / 2) >> 8;
         chr2 = input.charCodeAt(i / 2) & 255;
-        if (i / 2 + 1 < input.length) chr3 = input.charCodeAt(i / 2 + 1) >> 8; else chr3 = NaN;
+        if (i / 2 + 1 < input.length) chr3 = input.charCodeAt(i / 2 + 1) >> 8;else chr3 = NaN;
       } else {
         chr1 = input.charCodeAt((i - 1) / 2) & 255;
 
@@ -1938,8 +1937,8 @@
 
   var _fireRequest2 = function _fireRequest2(url, tries, skipARP, sendOULFlag) {
     var _this = this,
-      _window$clevertap,
-      _window$wizrocket;
+        _window$clevertap,
+        _window$wizrocket;
 
     if (_classPrivateFieldLooseBase(this, _dropRequestDueToOptOut)[_dropRequestDueToOptOut]()) {
       this.logger.debug('req dropped due to optout cookie: ' + this.device.gcookie);
@@ -2485,9 +2484,9 @@
       var _this;
 
       var logger = _ref.logger,
-        request = _ref.request,
-        account = _ref.account,
-        isPersonalisationActive = _ref.isPersonalisationActive;
+          request = _ref.request,
+          account = _ref.account,
+          isPersonalisationActive = _ref.isPersonalisationActive;
 
       _classCallCheck(this, ProfileHandler);
 
@@ -2655,10 +2654,10 @@
       var _this;
 
       var request = _ref.request,
-        account = _ref.account,
-        session = _ref.session,
-        logger = _ref.logger,
-        device = _ref.device;
+          account = _ref.account,
+          session = _ref.session,
+          logger = _ref.logger,
+          device = _ref.device;
 
       _classCallCheck(this, UserLoginHandler);
 
@@ -2995,14 +2994,14 @@
 
   var _tr = function _tr(msg, _ref) {
     var device = _ref.device,
-      session = _ref.session,
-      request = _ref.request,
-      logger = _ref.logger;
+        session = _ref.session,
+        request = _ref.request,
+        logger = _ref.logger;
     var _device = device;
     var _session = session;
     var _request = request;
     var _logger = logger;
-    var _wizCounter = 0;
+    var _wizCounter = 0; // Campaign House keeping
 
     var doCampHouseKeeping = function doCampHouseKeeping(targetingMsgJson) {
       var campaignId = targetingMsgJson.wzrk_id.split('_')[0];
@@ -3170,7 +3169,7 @@
 
         if (isLegacy) {
           ctaElement = contentDiv;
-        } else {
+        } else if (contentDiv !== null) {
           jsCTAElements = contentDiv.getElementsByClassName('jsCT_CTA');
 
           if (jsCTAElements != null && jsCTAElements.length === 1) {
@@ -3237,9 +3236,61 @@
       _request.processEvent(data);
     };
 
+    var renderPersonalisationBanner = function renderPersonalisationBanner(targetingMsgJson) {
+      var divId = targetingMsgJson.display.divId;
+
+      if (document.getElementById(divId) == null) {
+        return;
+      }
+
+      var onClick = targetingMsgJson.display.onClick;
+      var iframe = document.createElement('iframe');
+      iframe.frameborder = '0px';
+      iframe.marginheight = '0px';
+      iframe.marginwidth = '0px';
+      iframe.id = 'wiz-iframe';
+      var html = targetingMsgJson.msgContent.html;
+      iframe.setAttribute('style', 'width: 100%;height: 100%;left:0;top:0');
+      document.getElementById(divId).appendChild(iframe);
+      var ifrm = iframe.contentWindow ? iframe.contentWindow : iframe.contentDocument.document ? iframe.contentDocument.document : iframe.contentDocument;
+      var doc = ifrm.document;
+      doc.open();
+      doc.write(html);
+      doc.close();
+      var contentDiv = document.getElementById('wiz-iframe').contentDocument.getElementById('contentDiv');
+      setupClickUrl(onClick, targetingMsgJson, contentDiv, divId, false);
+    };
+
     var renderFooterNotification = function renderFooterNotification(targetingMsgJson) {
       var campaignId = targetingMsgJson.wzrk_id.split('_')[0];
       var displayObj = targetingMsgJson.display;
+
+      if (displayObj.wtarget_type === 2) {
+        // Logic for kv pair data
+        if (targetingMsgJson.msgContent.type === 1) {
+          var inaObj = {};
+          inaObj.msgId = targetingMsgJson.wzrk_id;
+
+          if (targetingMsgJson.wzrk_pivot) {
+            inaObj.pivotId = targetingMsgJson.wzrk_pivot;
+          }
+
+          if (targetingMsgJson.msgContent.kv != null) {
+            inaObj.kv = targetingMsgJson.msgContent.kv;
+          }
+
+          var kvPairsEvent = new CustomEvent('CT_web_personalization', {
+            detail: inaObj
+          });
+          document.dispatchEvent(kvPairsEvent);
+          return;
+        } // Logic for personalisation banner / carousel
+
+
+        if (targetingMsgJson.msgContent.type === 2 || targetingMsgJson.msgContent.type === 3) {
+          return renderPersonalisationBanner(targetingMsgJson);
+        }
+      }
 
       if (displayObj.layout === 1) {
         return showExitIntent(undefined, targetingMsgJson);
@@ -3342,7 +3393,7 @@
 
         var onClickStr = 'parent.$WZRK_WR.closeIframe(' + campaignId + ",'" + divId + "');";
         var title = "<div class='wzrkPPwarp' style='color:" + textColor + ';background-color:' + bgColor + ";'>" + "<a href='javascript:void(0);' onclick=" + onClickStr + " class='wzrkClose' style='background-color:" + btnBg + ';color:' + btColor + "'>&times;</a>" + "<div id='contentDiv' class='wzrk'>" + "<table cellpadding='0' cellspacing='0' border='0'>" + // "<tr><td colspan='2'></td></tr>"+
-          '<tr>' + imageTd + "<td style='vertical-align:top;'>" + "<div class='wzrkPPtitle' style='color:" + textColor + "'>" + titleText + '</div>';
+        '<tr>' + imageTd + "<td style='vertical-align:top;'>" + "<div class='wzrkPPtitle' style='color:" + textColor + "'>" + titleText + '</div>';
         var body = "<div class='wzrkPPdscr' style='color:" + textColor + "'>" + descriptionText + '<div></td></tr></table></div>';
         html = css + title + body;
       }
@@ -3415,6 +3466,10 @@
           inaObj.msgContent = targetingMsgJson.msgContent;
           inaObj.msgId = targetingMsgJson.wzrk_id;
 
+          if (targetingMsgJson.wzrk_pivot) {
+            inaObj.pivotId = targetingMsgJson.wzrk_pivot;
+          }
+
           if (targetingMsgJson.display.kv != null) {
             inaObj.kv = targetingMsgJson.display.kv;
           }
@@ -3448,13 +3503,19 @@
           _callBackCalled = true;
         }
       } else {
+        window.clevertap.popupCurrentWzrkId = targetingMsgJson.wzrk_id;
         renderFooterNotification(targetingMsgJson);
 
-        if (window.clevertap.hasOwnProperty('popupCallback') && typeof window.clevertap.popupCallback !== 'undefined' && typeof window.clevertap.popupCallback === 'function') {
-          var popupCallback = window.clevertap.popupCallback;
+        if (window.clevertap.hasOwnProperty('popupCallbacks') && typeof window.clevertap.popupCallbacks !== 'undefined' && typeof window.clevertap.popupCallbacks[targetingMsgJson.wzrk_id] === 'function') {
+          var popupCallback = window.clevertap.popupCallbacks[targetingMsgJson.wzrk_id];
           var _inaObj = {};
           _inaObj.msgContent = targetingMsgJson.msgContent;
           _inaObj.msgId = targetingMsgJson.wzrk_id;
+
+          if (targetingMsgJson.wzrk_pivot) {
+            _inaObj.pivotId = targetingMsgJson.wzrk_pivot;
+          }
+
           var msgCTkv = [];
 
           for (var wzrkPrefixKey in targetingMsgJson) {
@@ -3483,11 +3544,18 @@
             var eventData = {};
             eventData.type = 'event';
             eventData.evtName = NOTIFICATION_CLICKED;
-            eventData.evtData = _defineProperty({}, WZRK_ID, notificationData.msgId); // WZRK PREFIX KEY VALUE PAIRS
+            eventData.evtData = _defineProperty({}, WZRK_ID, notificationData.msgId);
+
+            if (targetingMsgJson.wzrk_pivot) {
+              eventData.evtData = _objectSpread2(_objectSpread2({}, eventData.evtData), {}, {
+                wzrk_pivot: notificationData.pivotId
+              });
+            } // WZRK PREFIX KEY VALUE PAIRS
+
 
             if (notificationData.msgCTkv) {
               var _iterator = _createForOfIteratorHelper(notificationData.msgCTkv),
-                _step;
+                  _step;
 
               try {
                 for (_iterator.s(); !(_step = _iterator.n()).done;) {
@@ -3640,7 +3708,7 @@
       for (var index = 0; index < msg.inapp_notifs.length; index++) {
         var targetNotif = msg.inapp_notifs[index];
 
-        if (targetNotif.display.wtarget_type == null || targetNotif.display.wtarget_type === 0) {
+        if (targetNotif.display.wtarget_type == null || targetNotif.display.wtarget_type === 0 || targetNotif.display.wtarget_type === 2) {
           showFooterNotification(targetNotif);
         } else if (targetNotif.display.wtarget_type === 1) {
           // if display['wtarget_type']==1 then exit intent
@@ -3846,7 +3914,7 @@
       try {
         var ts = new Date().getTime();
         console[level]("CleverTap [".concat(ts, "]: ").concat(message));
-      } catch (e) { }
+      } catch (e) {}
     }
   };
 
@@ -3864,7 +3932,7 @@
     // SCOOKIE_NAME
     function SessionManager(_ref) {
       var logger = _ref.logger,
-        isPersonalisationActive = _ref.isPersonalisationActive;
+          isPersonalisationActive = _ref.isPersonalisationActive;
 
       _classCallCheck(this, SessionManager);
 
@@ -4019,10 +4087,10 @@
   var RequestManager = /*#__PURE__*/function () {
     function RequestManager(_ref) {
       var logger = _ref.logger,
-        account = _ref.account,
-        device = _ref.device,
-        session = _ref.session,
-        isPersonalisationActive = _ref.isPersonalisationActive;
+          account = _ref.account,
+          device = _ref.device,
+          session = _ref.session,
+          isPersonalisationActive = _ref.isPersonalisationActive;
 
       _classCallCheck(this, RequestManager);
 
@@ -4281,8 +4349,8 @@
       var _this;
 
       var request = _ref.request,
-        account = _ref.account,
-        logger = _ref.logger;
+          account = _ref.account,
+          logger = _ref.logger;
 
       _classCallCheck(this, Privacy);
 
@@ -4415,9 +4483,9 @@
       var _this;
 
       var logger = _ref.logger,
-        session = _ref.session,
-        request = _ref.request,
-        account = _ref.account;
+          session = _ref.session,
+          request = _ref.request,
+          account = _ref.account;
 
       _classCallCheck(this, NotificationHandler);
 
@@ -4976,10 +5044,10 @@
 
     function CleverTap() {
       var _clevertap$account,
-        _clevertap$account2,
-        _clevertap$account3,
-        _this = this,
-        _clevertap$account4;
+          _clevertap$account2,
+          _clevertap$account3,
+          _this = this,
+          _clevertap$account4;
 
       var clevertap = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
@@ -5041,10 +5109,12 @@
         value: _classPrivateFieldLooseBase(this, _checkPageChanged)[_checkPageChanged].bind(this)
       });
       this.enablePersonalization = void 0;
+      this.popupCallbacks = {};
+      this.popupCurrentWzrkId = '';
       _classPrivateFieldLooseBase(this, _onloadcalled)[_onloadcalled] = 0;
       this._isPersonalisationActive = this._isPersonalisationActive.bind(this);
 
-      this.raiseNotificationClicked = function () { };
+      this.raiseNotificationClicked = function () {};
 
       _classPrivateFieldLooseBase(this, _logger$9)[_logger$9] = new Logger(logLevels.INFO);
       _classPrivateFieldLooseBase(this, _account$5)[_account$5] = new Account((_clevertap$account = clevertap.account) === null || _clevertap$account === void 0 ? void 0 : _clevertap$account[0], clevertap.region || ((_clevertap$account2 = clevertap.account) === null || _clevertap$account2 === void 0 ? void 0 : _clevertap$account2[1]), clevertap.targetDomain || ((_clevertap$account3 = clevertap.account) === null || _clevertap$account3 === void 0 ? void 0 : _clevertap$account3[2]));
@@ -5129,8 +5199,8 @@
       };
 
       this.getDCDomain = function () {
-        return 'dc-' + _classPrivateFieldLooseBase(_this, _account$5)[_account$5].finalTargetDomain;
-      }; // Get the Direct Call sdk version
+        return _classPrivateFieldLooseBase(_this, _account$5)[_account$5].finalTargetDomain;
+      }; // Set the Direct Call sdk version and fire request
 
 
       this.setDCSDKVersion = function (ver) {
@@ -5147,6 +5217,43 @@
         pageLoadUrl = addToURL(pageLoadUrl, 'd', compressData(JSON.stringify(data), _classPrivateFieldLooseBase(_this, _logger$9)[_logger$9]));
 
         _classPrivateFieldLooseBase(_this, _request$6)[_request$6].saveAndFireRequest(pageLoadUrl, false);
+      }; // method for notification viewed
+
+
+      this.renderNotificationViewed = function (detail) {
+        processNotificationEvent(NOTIFICATION_VIEWED, detail);
+      }; // method for notification clicked
+
+
+      this.renderNotificationClicked = function (detail) {
+        processNotificationEvent(NOTIFICATION_CLICKED, detail);
+      };
+
+      var processNotificationEvent = function processNotificationEvent(eventName, eventDetail) {
+        if (!eventDetail || !eventDetail.msgId) {
+          return;
+        }
+
+        var data = {};
+        data.type = 'event';
+        data.evtName = eventName;
+        data.evtData = _defineProperty({}, WZRK_ID, eventDetail.msgId);
+
+        if (eventDetail.pivotId) {
+          data.evtData = _objectSpread2(_objectSpread2({}, data.evtData), {}, {
+            wzrk_pivot: eventDetail.pivotId
+          });
+        }
+
+        if (eventDetail.kv && eventDetail.kv !== null && eventDetail.kv !== undefined) {
+          for (var key in eventDetail.kv) {
+            if (key.startsWith(WZRK_PREFIX)) {
+              data.evtData = _objectSpread2(_objectSpread2({}, data.evtData), {}, _defineProperty({}, key, eventDetail.kv[key]));
+            }
+          }
+        }
+
+        _classPrivateFieldLooseBase(_this, _request$6)[_request$6].processEvent(data);
       };
 
       this.setLogLevel = function (l) {
@@ -5249,9 +5356,6 @@
     }
 
     _createClass(CleverTap, [{
-      key: "raiseNotificationClicked",
-      value: function raiseNotificationClicked() { }
-    }, {
       key: "init",
       value: function init(accountId, region, targetDomain) {
         if (_classPrivateFieldLooseBase(this, _onloadcalled)[_onloadcalled] === 1) {
@@ -5376,7 +5480,7 @@
         }
 
         data.af = {
-          lib: 'web-sdk-v1.1.2'
+          lib: parseInt('1.2.0'.replace(/\./g, '0'))
         };
         pageLoadUrl = addToURL(pageLoadUrl, 'type', 'page');
         pageLoadUrl = addToURL(pageLoadUrl, 'd', compressData(JSON.stringify(data), _classPrivateFieldLooseBase(this, _logger$9)[_logger$9]));
@@ -5401,6 +5505,12 @@
       key: "_isPersonalisationActive",
       value: function _isPersonalisationActive() {
         return StorageManager$1._isLocalStorageSupported() && this.enablePersonalization;
+      }
+    }, {
+      key: "popupCallback",
+      // eslint-disable-next-line accessor-pairs
+      set: function set(callback) {
+        this.popupCallbacks[this.popupCurrentWzrkId] = callback;
       }
     }]);
 

@@ -3,7 +3,7 @@ const ProductCard = ({ image, name, price, id, category, handleAddToCart }) => {
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg pb-3">
-      <img className="w-7/12 m-auto mt-12" src={image} alt={category + "_" + id + "_" + name} />
+      <img className="w-7/12 m-auto" src={image} alt={category + "_" + id + "_" + name} />
       <p className="text-gray-600">{name}</p>
       <p className="text-2xl font-semibold mt-4 text-gray-600">&#8377;{" " + price}</p>
       <div className="px-6 pt-4 pb-2 ">
