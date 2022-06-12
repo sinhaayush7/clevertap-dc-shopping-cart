@@ -9,10 +9,13 @@ export const Call = ({ name, email }) => {
   let clevertap = window.clevertap
   let [dcClient, setDcClient] = useState(undefined)
   useEffect(() => {
+    let cuid = email.split('@')
+    cuid = cuid[0]
+    console.log(cuid)
     DirectCall.init({
       accountId: "61a52046f56a14cb19a1e9cc",
       apikey: "9dcced09dae16c5e3606c22346d92361b77efdb360425913850bea4f22d812dd",
-      cuid: email,
+      cuid,
       name,
       clevertap
     }).then((client) => {
@@ -30,7 +33,7 @@ export const Call = ({ name, email }) => {
     const cuids = ['ayush.sinha', 'sumantu', 'shivam.sharma', 'darshan.pania', 'sumantudc']
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
     if (dcClient && dcClient.isEnabled()) {
-      toast("calling " +  callee + '@clevertap.com')
+      toast("calling " + callee + '@clevertap.com')
       dcClient.call(callee, 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
         if (err && err.message) {
           toast(err.message)

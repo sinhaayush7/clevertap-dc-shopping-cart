@@ -12,6 +12,7 @@ const LoginPage = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [showError, setShowError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
   const history = useNavigate()
 
   const showToast = (message) => {
@@ -19,9 +20,21 @@ const LoginPage = () => {
   }
 
 
+
+  const validateEmail = (arg) => {
+    let str = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    let reg = new RegExp(str)
+    return reg.test(arg)
+  }
+
   const profilePushPressed = (e) => {
     e.preventDefault()
     if (!name || !email) {
+      setErrorMessage("* Name and Email are mandatory fields")
+      return setShowError(true)
+    }
+    if (!validateEmail(email)) {
+      setErrorMessage("* The email entered is not a valid email")
       return setShowError(true)
     }
     clevertap.profile.push({
@@ -88,7 +101,7 @@ const LoginPage = () => {
           {/* <button onClick={onUserLoginPressed} className="btn btn-primary px-4 py-2 rounded text-white">On User Login</button> */}
           {
             showError ? <>
-              <p className='pt-4 text-red-400 text-sm'>* Name and Email are mandatory fields</p>
+              <p className='pt-4 text-red-400 text-sm'>{errorMessage}</p>
             </> : null
           }
         </form>
