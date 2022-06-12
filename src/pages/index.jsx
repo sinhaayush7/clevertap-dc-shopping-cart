@@ -74,7 +74,7 @@ export const HomePage = ({ clevertap }) => {
       <AppBar totalItems={items} totalCost={totalCost} product={product} handleCheckout={handleCheckout} />
       <div style={{ paddingTop: '5%' }}>
         <div id="banner" style={{height: '405px', margin: '40px', overflow: 'hidden'}}></div>
-        <div className="flex flex-wrap mb-3 mb-12" style={{paddingLeft: '6%'}}>
+        <div className="flex flex-wrap mb-3" style={{paddingLeft: '6%'}}>
           {
             PRODUCTS.map(products => {
               return (
