@@ -13,7 +13,6 @@ Clevertap.privacy.push({ optOut: false });
 Clevertap.init('4R4-5K9-475Z', 'sk1-staging-4', 'wzrkt.com')
 Clevertap.setLogLevel(3);
 window.clevertap = Clevertap
-// console.log(process)
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
