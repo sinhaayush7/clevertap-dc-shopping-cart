@@ -34,7 +34,7 @@ export const Call = ({ name, email }) => {
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
     if (dcClient && dcClient.isEnabled()) {
       toast("calling " + callee + '@clevertap.com')
-      dcClient.call('ayush', 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
+      dcClient.call(callee, 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
         if (err && err.message) {
           toast(err.message)
         } else {
