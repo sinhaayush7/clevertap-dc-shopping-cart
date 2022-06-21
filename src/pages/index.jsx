@@ -19,16 +19,16 @@ export const HomePage = ({ clevertap }) => {
       history('/')
       return
     }
-  }, [state])
+  }, [state, history])
 
   useEffect(() => {
     clevertap.event.push("test Page Visited", {
-      "test page":"Home",
+      "test page": "Home",
     });
-    document.addEventListener('CT_web_personalization', function(e) {
+    document.addEventListener('CT_web_personalization', function (e) {
       clevertap.renderNotificationClicked(e.detail)
     })
-  }, []);
+  }, [clevertap]);
 
   const [items, setItems] = useState([])
   const [totalCost, setTotalCost] = useState(0)
@@ -73,8 +73,8 @@ export const HomePage = ({ clevertap }) => {
     <>
       <AppBar totalItems={items} totalCost={totalCost} product={product} handleCheckout={handleCheckout} />
       <div style={{ paddingTop: '5%' }}>
-        <div id="banner" style={{height: '405px', margin: '40px', overflow: 'hidden'}}></div>
-        <div className="flex flex-wrap mb-3" style={{paddingLeft: '6%'}}>
+        <div id="banner" style={{ height: '405px', margin: '40px', overflow: 'hidden' }}></div>
+        <div className="flex flex-wrap mb-3" style={{ paddingLeft: '6%' }}>
           {
             PRODUCTS.map(products => {
               return (
@@ -85,7 +85,7 @@ export const HomePage = ({ clevertap }) => {
             })
           }
         </div>
-        <div id="carousel" style={{height: '405px', margin: '40px', overflow: 'hidden'}}></div>
+        <div id="carousel" style={{ height: '405px', margin: '40px', overflow: 'hidden' }}></div>
         {
           !email ? null : <Call clevertap={clevertap} name={name} email={email} />
         }
