@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 let Clevertap = clevertap
 Clevertap.privacy.push({ optOut: false });
 // Clevertap.init('W9R-486-4W5Z');
-Clevertap.init('4R4-5K9-475Z', 'sk1-staging-4', 'wzrkt.com')
+Clevertap.init('48K-W44-556Z', 'sk1', 'wzrkt.com')
 Clevertap.setLogLevel(3);
 window.clevertap = Clevertap
 ReactDOM.render(

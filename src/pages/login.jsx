@@ -22,7 +22,7 @@ const LoginPage = () => {
 
 
   const validateEmail = (arg) => {
-    let str = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    let str = /^[\w]+@([\w-]+\.)+[\w-]{2,4}$/
     let reg = new RegExp(str)
     return reg.test(arg)
   }
@@ -54,26 +54,26 @@ const LoginPage = () => {
     history('/home', { state: { name, email } });
   }
 
-  const onUserLoginPressed = (e) => {
-    e.preventDefault()
-    if (!name || !email) {
-      return setShowError(true)
-    }
-    clevertap.onUserLogin.push({
-      "Site": {
-        "Name": "Niko Bellic",
-        "Identity": name,
-        "Email": email,
-        "Phone": "+919999999999",
-        "Gender": "M",
-        "DOB": new Date("1988-08-24"),
-        "Photo": 'https://img1.svg.com/img/gallery/what-the-critics-are-saying-about-yakuza-like-a-dragon/intro-1602524858.jpg',    // URL to the Image
-      }
-    })
-    showToast("CleverTap OnUserLogin Event Recorded!")
+  // const onUserLoginPressed = (e) => {
+  //   e.preventDefault()
+  //   if (!name || !email) {
+  //     return setShowError(true)
+  //   }
+  //   clevertap.onUserLogin.push({
+  //     "Site": {
+  //       "Name": "Niko Bellic",
+  //       "Identity": name,
+  //       "Email": email,
+  //       "Phone": "+919999999999",
+  //       "Gender": "M",
+  //       "DOB": new Date("1988-08-24"),
+  //       "Photo": 'https://img1.svg.com/img/gallery/what-the-critics-are-saying-about-yakuza-like-a-dragon/intro-1602524858.jpg',    // URL to the Image
+  //     }
+  //   })
+  //   showToast("CleverTap OnUserLogin Event Recorded!")
 
-    history('/home', { state: { name, email } });
-  }
+  //   history('/home', { state: { name, email } });
+  // }
 
 
   return (
