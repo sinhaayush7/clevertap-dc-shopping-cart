@@ -1,5 +1,13 @@
+import { useNavigate } from "react-router-dom"
 
 const CartIcon = ({ totalItems, totalCost, handleCheckout }) => {
+  const history = useNavigate()
+  const handleLogout = () => {
+    if (window.dcClient) {
+      window.dcClient.logout()
+    }
+    history('/')
+  }
 
   return (
     <div className="flex items-center justify-between">
@@ -8,8 +16,10 @@ const CartIcon = ({ totalItems, totalCost, handleCheckout }) => {
         <p className="text-sm text-white">Total Cost: {totalCost}</p>
       </div>
       <button className="bg-transparent hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center border border-white" onClick={() => handleCheckout(totalItems)}>
-
-        <span>Checkout</span>
+        <span className="text-white">Checkout</span>
+      </button>
+      <button className="bg-transparent hover:bg-gray-400 text-gray-800 ml-2 font-bold py-2 px-4 rounded inline-flex items-center border border-white" onClick={() => handleLogout(totalItems)}>
+        <span className="text-white">Logout</span>
       </button>
     </div>
   )
