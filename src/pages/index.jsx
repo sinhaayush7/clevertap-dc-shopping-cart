@@ -15,7 +15,7 @@ export const HomePage = ({ clevertap }) => {
   let { state } = useLocation()
 
   useEffect(() => {
-    if (!state || !state.name || !state.email) {
+    if (!state || !state.name || !state.cuid) {
       history('/')
       return
     }
@@ -33,10 +33,7 @@ export const HomePage = ({ clevertap }) => {
   const [items, setItems] = useState([])
   const [totalCost, setTotalCost] = useState(0)
   const [product, setProduct] = useState([])
-  if (state) {
-    name = state.name
-    email = state.email
-  }
+
   const showToast = (message) => {
     toast(message)
   }
@@ -46,8 +43,6 @@ export const HomePage = ({ clevertap }) => {
     if (items.indexOf(id) < 0) {
       setItems([...items, id])
       setProduct([...product, { image, name, price, id, quantity: 1 }])
-
-    } else {
 
     }
     setTotalCost(totalCost + price)
@@ -86,9 +81,8 @@ export const HomePage = ({ clevertap }) => {
           }
         </div>
         <div id="carousel" style={{ height: '405px', margin: '40px', overflow: 'hidden' }}></div>
-        {
-          !email ? null : <Call clevertap={clevertap} name={name} email={email} />
-        }
+        <Call clevertap={clevertap} name={name} email={email} />
+
         <ToastContainer position="top-right"
           autoClose={2000}
           hideProgressBar={false}

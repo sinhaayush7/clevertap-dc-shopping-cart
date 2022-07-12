@@ -1,33 +1,9 @@
-import { useState } from "react"
-import { useEffect } from "react"
-import { toast, ToastContainer } from "react-toastify"
-import * as DirectCall from '../libs/directcall-sdk'
+import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css';
 
-export const Call = ({ name, email }) => {
-
-  let clevertap = window.clevertap
-  let [dcClient, setDcClient] = useState(undefined)
-  useEffect(() => {
-    let cuid = email.split('@')
-    cuid = cuid[0]
-    console.log(cuid)
-    DirectCall.init({
-      accountId: "61a52046f56a14cb19a1e9cc",
-      apikey: "9dcced09dae16c5e3606c22346d92361b77efdb360425913850bea4f22d812dd",
-      cuid,
-      name,
-      clevertap
-    }).then((client) => {
-      setDcClient(client)
-    }).catch(err => {
-      if (err && err.message) {
-        toast(err.message)
-      } else {
-        toast(err)
-      }
-    })
-  }, [email, name, clevertap])
+export const Call = () => {
+  let dcClient = window.dcClient
+  
 
   const makeCall = () => {
     const cuids = ['ayush.sinha', 'sumantu', 'shivam.sharma', 'darshan.pania', 'sumantudc']
