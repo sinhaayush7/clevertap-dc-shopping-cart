@@ -100,7 +100,7 @@ const LoginPage = () => {
             <label className="block text-gray-700 text-md font-regular mb-2" htmlFor="name">
               Name
             </label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter Name" onChange={e => { setName(e.target.value); setShowError(false) }} />
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Allison Burgers" onChange={e => { setName(e.target.value); setShowError(false) }} />
           </div>
           <div className="form-group">
             <div className="grid gap-6 mb-6">
@@ -110,7 +110,7 @@ const LoginPage = () => {
                 </label>
                 <div>
                   <div className="mt-1 flex rounded-md shadow-sm relative">
-                    <input className="shadow appearance-none border rounded flex-1 w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter email" onChange={e => { setCuid(e.target.value); setShowError(false) }} />
+                    <input className="shadow appearance-none border rounded flex-1 w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="allison.burgers" onChange={e => { setCuid(e.target.value); setShowError(false) }} />
                     {
                       isLp ? <BadgeComponent text=".lp" style={{ height: 20, width: 50, left: "43%", top: "22%", position: "absolute" }} /> : null
                     }
