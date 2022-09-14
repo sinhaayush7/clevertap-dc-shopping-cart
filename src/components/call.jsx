@@ -6,7 +6,7 @@ export const Call = () => {
   
 
   const makeCall = () => {
-    const cuids = ['ayush', 'sumantu', 'shivam', 'darshan', 'sumantudc']
+    const cuids = ['sumantu','sumantudc']
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
     if (dcClient && dcClient.isEnabled()) {
       toast("calling " + callee + '@clevertap.com')
