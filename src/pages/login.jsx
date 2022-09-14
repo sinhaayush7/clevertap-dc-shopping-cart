@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import { BadgeComponent } from '../components/badge';
 import { SelectComponent } from '../components/select';
 import { SpinnerComponent } from '../components/spinner';
-import * as DirectCallClient from '../libs/directcall-sdk';
+import {initDirectCall} from '../libs/directcall-sdk';
 import '../styles/login.css';
 
 
@@ -43,7 +43,7 @@ const LoginPage = () => {
       return setShowError(true)
     }
     setIsLoading(true)
-    DirectCallClient.init({
+    initDirectCall({
       accountId: "61a52046f56a14cb19a1e9cc",
       apikey: "9dcced09dae16c5e3606c22346d92361b77efdb360425913850bea4f22d812dd",
       cuid: isLp ? cuid + ".lp" : cuid,
