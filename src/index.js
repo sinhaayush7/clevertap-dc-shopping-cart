@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import clevertap from './libs/ctsdk'
+import clevertap from 'clevertap-web-sdk'
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 let Clevertap = clevertap
 Clevertap.privacy.push({ optOut: false });
 // Clevertap.init('W9R-486-4W5Z');
-Clevertap.init('5WW-WWW-WW4Z', 'sg1')
+Clevertap.init('ZWW-WWW-WW4Z', 'in1')
 Clevertap.setLogLevel(3);
 window.clevertap = Clevertap
 ReactDOM.render(
