@@ -10,7 +10,7 @@ export const Call = () => {
     const callee = cuids[Math.floor(Math.random() * cuids.length)];
     if (dcClient && dcClient.isEnabled()) {
       toast("calling " + callee + '@clevertap.com')
-      dcClient.call(callee, 'Introductroy Call').then(res => toast('call ' + res)).catch(err => {
+      dcClient.call(callee, callee === 'sumantu' ? "Regarding Payment Failure" : "Your booking to Srinagar").then(res => toast('call ' + res)).catch(err => {
         if (err && err.message) {
           toast(err.message)
         } else {
@@ -18,7 +18,7 @@ export const Call = () => {
         }
       })
     } else {
-      toast("Please wait while DirectCall Client is being connected")
+      toast("Please wait while Signed Client is being connected")
     }
   }
   return (
